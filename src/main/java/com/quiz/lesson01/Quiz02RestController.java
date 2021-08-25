@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class Quiz01RestController {
+public class Quiz02RestController {
 	
 @RequestMapping("/quiz02/1")
 
