@@ -18,7 +18,6 @@ public class StoreRestController {
 	@RequestMapping("/lesson02/quiz01")
 	public List<Store> quiz01() {
 		List<Store> storeList = storeBO.getStoreList();
-		
 		return storeList;
 	}
 
