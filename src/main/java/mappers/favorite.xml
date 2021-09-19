@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+ <mapper namespace="com.quiz.lesson06.DAO.FavoriteDAO">
+ 	<insert id="insertFavorite" parameterType="map">
+ 		INSERT INTO `favorite`
+ 		(
+ 			`name`
+ 			,`url`
+ 			,`updatedAt`
+ 			,`createdAt`
+ 		)
+ 		VALUES
+ 		(
+ 			#{name}
+ 			,#{url}
+ 			,NOW()
+ 			,NOW()
+ 		)
+ 		
+ 	</insert>
+ 	
+ 	<select id="selectFavoriteList" resultType="com.quiz.lesson06.model.Favorite">
+ 		SELECT
+ 			`id`
+ 			,`name`
+ 			,`url`
+ 			,`updatedAt`
+ 			,`createdAt`
+ 		FROM
+ 			`favorite`
+ 	</select>
+ 	
+ 	<select id="selectFavoriteByUrl" parameterType="string" resultType="com.quiz.lesson06.model.Favorite">
+ 	SELECT
+ 			`id`
+ 			,`name`
+ 			,`url`
+ 			,`updatedAt`
+ 			,`createdAt`
+ 		FROM
+ 			`favorite`
+ 		WHERE
+ 			`url` = #{url}
+ 	</select>
+ 	
+ 	<delete id="deleteFavoriteById" parameterType="int" >
+ 		DELETE
+ 		FROM
+ 		 `favorite`
+ 		WHERE
+ 			`id` = #{id}
+ 		
+ 	</delete>
+ 	
+ 	
+ </mapper>
+ 
