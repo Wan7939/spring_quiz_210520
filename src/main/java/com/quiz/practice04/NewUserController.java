@@ -35,7 +35,7 @@ public class NewUserController {
 			// DB insert 화이팅!
 			newUserBO.addUser(name, yyyymmdd, introduce, email);
 		
-		return "practice04/afterAddUsers"; // 결과 jsp
+		return "practice04/afterAddUser"; // 결과 jsp
 			
 	}
 }
