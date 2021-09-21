@@ -23,6 +23,28 @@ public class ReviewController {
 		return reviewBO.getReview(id);
 		
 	}
+	// 요청 URL : http://localhost/practice03/ex02
+	@RequestMapping("/practice03/ex02")
+	public String ex02() {
+		Review review = new Review();
+		review.setStoreId(7);
+		review.setMenu("오겹2인세트");
+		review.setUserName("박경완");
+		review.setPoint(2.5);
+		review.setReview("둘이 먹기에는 좀 적네요");
+		
+		int row = reviewBO.insertReview(review);
+		return "success row count:" + row;
+	}
 	
+	// 요청 URL : http://localhost/practice03/ex03
+		@RequestMapping("/practice03/ex03")
+		public String ex03(
+				@RequestParam(value = "id") int id,
+				@RequestParam(value = "review") String review) {
+			
+			int row = reviewBO.updateReviewById(id, review);
+			return "변경 완료 : " + row ;
+		}
 	
 }

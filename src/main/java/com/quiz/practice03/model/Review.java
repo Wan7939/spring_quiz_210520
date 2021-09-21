@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Review {
 	private int id;
-	private String storeId;
+	private int storeId;
 	private String menu;
 	private String userName;
 	private double point;
@@ -18,11 +18,15 @@ public class Review {
 		this.id = id;
 	}
 	
-	public String getStoreId() {
+	
+	public int getStoreId() {
 		return storeId;
 	}
-	public void setStoreId(String storeId) {
+	public void setStoreId(int storeId) {
 		this.storeId = storeId;
+	}
+	public void setUpdatedAt(Date updatedAt) {
+		this.updatedAt = updatedAt;
 	}
 	public String getMenu() {
 		return menu;
