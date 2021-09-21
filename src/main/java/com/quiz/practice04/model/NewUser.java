@@ -1,4 +1,4 @@
-package com.quiz.practice04;
+package com.quiz.practice04.model;
 
 import java.util.Date;
 
